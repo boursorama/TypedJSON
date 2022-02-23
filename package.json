@@ -1,8 +1,8 @@
 {
   "name": "@boursorama/typed-json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A safe and elegant way to deal with Json data inspired by SwiftyJSON",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "git@github.com:boursorama/TypedJSON.git",
   "author": "Benoit Giannangeli <benoit.giannangeli@boursorama.fr>",
   "license": "MIT",
@@ -10,6 +10,9 @@
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
     "@types/jest": "^27.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
+    "eslint": "^7.32.0",
     "jest": "^27.5.1",
     "ts-jest": "^27.1.3",
     "ts-node": "^10.5.0",
