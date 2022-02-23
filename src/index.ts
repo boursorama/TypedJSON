@@ -104,7 +104,7 @@ export default class TypedJson {
       }
 
       return new TypedJson(array[index])
-    } else if (typeof this.rawValue === 'object') {
+    } else if (typeof this.rawValue === 'object' && this.rawValue !== null) {
       const map = this.rawValue as { [property: string]: JsonValue }
       let index: string =
         typeof keyOrPath === 'string' ? keyOrPath : `${keyOrPath}`
@@ -126,8 +126,11 @@ export default class TypedJson {
     return new TypedJson(null, new JsonException(JsonError.wrongType))
   }
 
-  exists (key: JsonKey): boolean {
-    return this.get(key).exception === undefined
+  exists (key: JsonKey, notNull: boolean = true): boolean {
+    return (
+      this.get(key).exception === undefined &&
+      (!notNull || this.get(key).rawValue !== null)
+    )
   }
 
   string (): string | undefined {
